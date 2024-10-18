@@ -1633,24 +1633,75 @@
         </div>
       </div>
       <div class="absolute w-full bg-blue-100 bottom-0 h-[548px]">
-        <div class=" w-full h-full flex items-center justify-between container mx-24 2xl:max-w-7xl pt-44 pb-5">
-          <div class=" w-80 h-full flex flex-col justify-between mb-24 gap-y-4 p-10">
-            <div class=" font-semibold text-xl">درباره ما</div>
-            <div class=" text-justify">
+        <div
+          class="w-full h-full flex items-start justify-between container mx-24 2xl:max-w-7xl pt-44 pb-28"
+        >
+          <div class="w-80 h-full flex flex-col justify-between mb-24 gap-y-4">
+            <div class="font-semibold text-xl">درباره ما</div>
+            <div class="text-justify">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
               استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
               در ستون و لازم است.
             </div>
-            <div class=" font-bold text-xl">عضویت در خبرنامه</div>
-            <div class=" flex items-center justify-center">
-              <input class=" w-full h-9 text-sm font-semibold pr-3" type="text" placeholder="موبایل خود را وارد کنید" />
-              <div class=" bg-blue-500 min-w-20 h-9 flex cursor-pointer items-center justify-center text-sm font-bold text-white">عضو شوید</div>
+            <div class="font-bold text-xl">عضویت در خبرنامه</div>
+            <div class="flex items-center justify-center">
+              <input
+                class="w-full h-9 text-sm font-semibold pr-3"
+                type="text"
+                placeholder="موبایل خود را وارد کنید"
+              />
+              <div
+                class="bg-blue-500 min-w-20 h-9 flex cursor-pointer items-center justify-center text-sm font-bold text-white"
+              >
+                عضو شوید
+              </div>
             </div>
           </div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="h-full w-fit flex flex-col justify-between mb-24">
+            <div class="font-semibold text-xl">صفحات کاربردی</div>
+            <div class="text-sm font-normal text-gray-700">فروشگاه</div>
+            <div class="text-sm font-normal text-gray-700">پنل کاربری</div>
+            <div class="text-sm font-normal text-gray-700">سبد خرید</div>
+            <div class="text-sm font-normal text-gray-700">راهنمای خرید</div>
+            <div class="text-sm font-normal text-gray-700">نحوه پرداخت</div>
+            <div class="text-sm font-normal text-gray-700">درباره ما</div>
+          </div>
+          <div class="flex flex-col w-[305px] justify-between h-full mb-24">
+            <div class="font-semibold text-xl">ارتباط با ما</div>
+            <div
+              class="bg-blue-200 bg-opacity-30 text-blue-500 rounded py-3 px-3 w-full"
+            >
+              شیراز - خیابان ملاصدرا - پلاک ۰
+            </div>
+            <div class="text-black text-xl font-normal text-left">
+              <span class="text-blue-500 font-normal text-3xl pr-2">۰۲۱</span
+              >۲۱۳۲۳۲۱
+            </div>
+            <div class="text-sm font-normal text-left">info@dimaland.com</div>
+            <div class="flex items-center justify-between">
+              <img src="/assets/images/aparat.png" alt="aparat" />
+              <img src="/assets/images/telegram.png" alt="aparat" />
+              <img src="/assets/images/instagram.png" alt="aparat" />
+              <img src="/assets/images/watsapp.png" alt="aparat" />
+              <img src="/assets/images/tweeter.png" alt="aparat" />
+            </div>
+          </div>
+          <div class="flex flex-col h-full justify-between mb-24">
+            <div class="flex justify-between items-center">
+              <div>مجوزهای ما</div>
+              <div
+                class="rounded-3xl bg-blue-300 bg-opacity-30 py-1 px-3 text-blue-500 text-xs font-semibold"
+              >
+                ۱۰۰٪ رسمی
+              </div>
+            </div>
+            <div class="grid grid-rows-2 grid-cols-2 gap-x-2 gap-y-6 text-left">
+              <img src="/assets/images/namad-01.png" alt="namad-logo" />
+              <img src="/assets/images/namad-02.png" alt="namad-logo" />
+              <img src="/assets/images/namad-03.png" alt="namad-logo" />
+              <img src="/assets/images/namad-03.png" alt="namad-logo" />
+            </div>
+          </div>
         </div>
         <div
           class="absolute w-full py-5 bg-blue-50 flex bottom-0 justify-center items-center"
@@ -1660,7 +1711,65 @@
         </div>
       </div>
     </footer>
+    <script>
+      //navbar section
+      const clickablemenu = document.querySelector(".clickable");
+      const clickablelist = document.querySelector(".listmenu");
+      const menu = document.querySelector(".menu");
+      // our services section
+      const servicesbtn = document.querySelectorAll(".services");
+      const serviceschild = document.querySelector(".services-child");
 
-    <script src="/src/js/javascript.js"></script>
+      //our performance
+      const performancediv = document.querySelectorAll(".performance");
+
+      //navbar section functions
+      clickablemenu.addEventListener("click", (e) => {
+        clickablelist.classList.toggle("hidden");
+      });
+      clickablelist.addEventListener("click", () => {
+        console.log("click");
+      });
+      menu.addEventListener("blur", () => {
+        clickablelist.classList.add("hidden");
+      });
+
+      // our services section functions
+      servicesbtn.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          console.log("servic");
+          servicesbtn.forEach((item) => {
+            item.classList.remove("bg-gray-100");
+            item.querySelector(".services-child").classList.add("hidden");
+            item.querySelector(".services-child").classList.remove("flex");
+          });
+          item.classList.add("bg-gray-100");
+          item.querySelector(".services-child").classList.remove("hidden");
+          item.querySelector(".services-child").classList.add("flex");
+        });
+        // item.addEventListener("blur", (e) => {
+        //   item.classList.remove("bg-gray-100");
+        //   item.querySelector(".services-child").classList.add("hidden");
+        //   item.querySelector(".services-child").classList.remove("flex");
+        // });
+      });
+
+      // our performance section functions
+      performancediv.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          performancediv.forEach((item) => {
+            item.querySelector(".performance-tag").classList.add("hidden");
+            item.querySelector(".title-performance").classList.add("text-lg");
+            item
+              .querySelector(".title-performance")
+              .classList.remove("text-xl");
+          });
+          item.querySelector(".performance-tag").classList.remove("hidden");
+          item.querySelector(".title-performance").classList.remove("text-lg");
+          item.querySelector(".title-performance").classList.add("text-xl");
+        });
+      });
+    </script>
+    <!-- <script src="/src/js/javascript.js"></script> -->
   </body>
 </html>
